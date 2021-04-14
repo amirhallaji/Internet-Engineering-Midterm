@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Information</title>  <!-- the title of the page-->
+
+<head>
+    <title>Information</title> <!-- the title of the page-->
     <link rel="stylesheet" href="css/styles.css"> <!-- external css file -->
     <script type="text/javascript" src="js/index.js"></script>
-    </head>
-    <body>
-        <div class="main_border">
-        <span class="sides">
-        <em class="lr-sides">Mr. or Ms.?</em>
-        <form action="https://api.genderize.io/?name=" class="left_side" method="GET">
-        <p>Name: <input type="text" name="name" id="name_input" placeholder="Name:" ></p>        
-        <p><input type="radio" > Male</p>
-        <p><input type="radio"> Female</p>
-        <p><input type="submit" value="Predict"></p>
-        </form>
+</head>
+
+<body>
+    <div id="container">
+        <span class="side">
+            <em>Mr. or Ms.?</em>
+            <p>Name: <input type="text" name="name" id="name_input" placeholder="Name:"></p>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">Male</label><br>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">Female</label><br>
+            <p><input type="submit" value="Predict" onclick="getGender()"></p>
 
         </span>
-        <span class="sides">
+        <span class="side">
             <em class="lr-sides">prediction</em>
-            <p id="prediction"></p>
+            <div id="prediction">
+                <p id="prediction-gender"></p>
+                <p id="prediction-probability"></p>
+            </div>
+            <div id="saved-answer">
+                <p id="saved-answer-gender"></p>
+            </div>
         </span>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
