@@ -1,0 +1,31 @@
+body{
+    background-image: url('../images/background.jpg');  /* source image of the background*/
+    background-repeat: no-repeat;  /* no repeat for background image*/
+    background-size: cover;  /* covering the whole page*/
+}
+
+div.main_border{
+    border: 3px solid green; /* creating a border*/
+    border-radius: 20px; /* set the edge of the border curved.*/
+    background-color: cyan;
+    opacity: 0.6;
+    margin: 13% auto; /* */
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 40vh;
+    width: 40vw;
+
+}
+
+span.sides{
+    padding: 5% 10%;
+}
+
+em.lr-sides {
+    font-size: large;
+}
+
+form.left_side > p {   /*all p elements inside form elements with the given class*/
+    margin-top: 3vh;
+}

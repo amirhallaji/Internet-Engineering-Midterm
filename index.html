@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <link rel="stylesheet" href="styles.css">
+        <title>Information</title>  <!-- the title of the page-->
+    <link rel="stylesheet" href="css/styles.css"> <!-- external css file -->
+    <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
+        <div class="main_border">
+        <span class="sides">
+        <em class="lr-sides">Mr. or Ms.?</em>
+        <form action="https://api.genderize.io/?name=" class="left_side" method="GET">
+        <p>Name: <input type="text" name="name" id="name_input" placeholder="Name:" ></p>        
+        <p><input type="radio" > Male</p>
+        <p><input type="radio"> Female</p>
+        <p><input type="submit" value="Predict"></p>
+        </form>
 
+        </span>
+        <span class="sides">
+            <em class="lr-sides">prediction</em>
+            <p id="prediction"></p>
+        </span>
+        </div>
     </body>
 </html>
