@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;  /* no repeat for background image*/
     background-size: cover;  /* covering the whole page*/
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 #container{
@@ -28,6 +29,6 @@ span > input {   /*all p elements inside form elements with the given class*/
     margin-top: 3vh;
 }
 
-@media screen (max-width: 768px) {
-
+@media screen and (max-width: 768px) {
+    
 }

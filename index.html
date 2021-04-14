@@ -12,10 +12,12 @@
         <span class="side">
             <em>Mr. or Ms.?</em>
             <p>Name: <input type="text" name="name" id="name_input" placeholder="Name:"></p>
+            
             <input type="radio" name="gender" value="male" id="male">
             <label for="male">Male</label><br>
             <input type="radio" name="gender" value="female" id="female">
             <label for="female">Female</label><br>
+            
             <p><input type="submit" value="Predict" onclick="getGender()"></p>
 
         </span>
@@ -26,7 +28,9 @@
                 <p id="prediction-probability"></p>
             </div>
             <div id="saved-answer">
+                <p>Saved Answer</p>
                 <p id="saved-answer-gender"></p>
+                <input type="submit" id="clear-saved-result" value="clear" onclick="removeSavedResult()">
             </div>
         </span>
     </div>
