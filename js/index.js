@@ -1,3 +1,4 @@
+let savedResult;
 function getGender() {
     var res = document.getElementById("name_input").value;
     fetch(`https://api.genderize.io/?name=${res}`)
@@ -19,16 +20,19 @@ function getGender() {
             }
             if (document.getElementById("male").checked) {
                 localStorage.setItem(name, "Male");
+                savedResult = name;
             }
             else if (document.getElementById("female").checked) {
                 localStorage.setItem(name, "Female");
+                savedResult = name;
             }
         });
 
 
 }
 function removeSavedResult() {
-    localStorage.clear();
+    // localStorage.clear();
+    localStorage.removeItem(savedResult);
 }
 
 // window.localStorage.
