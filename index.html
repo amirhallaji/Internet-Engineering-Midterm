@@ -10,27 +10,28 @@
 <body>
     <div id="container">
         <span class="side">
-            <em>Mr. or Ms.?</em>
-            <p>Name: <input type="text" name="name" id="name_input" placeholder="Name:"></p>
+            <h2>Mr. or Ms.?</h2>
+            <p><strong>Name:</strong> <input type="text" name="name" id="name_input" placeholder="Name:"></p>
             
             <input type="radio" name="gender" value="male" id="male">
             <label for="male">Male</label><br>
             <input type="radio" name="gender" value="female" id="female">
             <label for="female">Female</label><br>
             
-            <p><input type="submit" value="Predict" onclick="getGender()"></p>
+            <p><input type="submit" id="submit-button" value="Predict" onclick="getGender()"></p>
 
         </span>
         <span class="side">
-            <em class="lr-sides">prediction</em>
-            <div id="prediction">
+            <h2 class="lr-sides">Prediction</h2>
+            <div id="prediction" class="w3-border">
                 <p id="prediction-gender"></p>
                 <p id="prediction-probability"></p>
             </div>
             <div id="saved-answer">
-                <p>Saved Answer</p>
+                <strong>Saved Answer</strong>
                 <p id="saved-answer-gender"></p>
-                <input type="submit" id="clear-saved-result" value="clear" onclick="removeSavedResult()">
+                <input type="submit" id="clear-saved-result-button" value="Clear Last" onclick="removeSavedResult()">
+                <input type="submit" value="Clear All" id="clear-all" onclick="removeAll()">
             </div>
         </span>
     </div>

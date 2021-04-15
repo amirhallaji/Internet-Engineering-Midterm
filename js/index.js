@@ -6,13 +6,15 @@ function getGender() {
         .then(data => {
             let name = data.name;
             if (data.gender == null) {
-                window.alert("Error");
+                window.alert("Error in request. Please Try again");
             }
             else {
                 let gender = data.gender;
+
                 let probability = data.probability;
-                document.getElementById("prediction-gender").innerHTML = gender;
-                document.getElementById("prediction-probability").innerHTML = probability;
+                document.getElementById("prediction-gender").innerHTML = "Gender: " + gender ;
+                
+                document.getElementById("prediction-probability").innerHTML = "Probability: %" + (probability * 100);
 
                 if (localStorage.getItem(name) !== null) {
                     document.getElementById("saved-answer-gender").innerHTML = localStorage.getItem(data.name);
@@ -31,8 +33,12 @@ function getGender() {
 
 }
 function removeSavedResult() {
-    // localStorage.clear();
     localStorage.removeItem(savedResult);
+    document.getElementById("saved-answer-gender").innerHTML = "No saved answer.";
 }
 
-// window.localStorage.
+function removeAll(){
+    localStorage.clear();
+    document.getElementById("saved-answer-gender").innerHTML = "No saved answer.";
+}
+

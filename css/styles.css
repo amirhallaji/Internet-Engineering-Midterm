@@ -7,18 +7,25 @@ body{
 }
 
 #container{
-    border: 3px solid green; /* creating a border*/
+    border: 3px solid none; /* creating a border*/
     border-radius: 20px; /* set the edge of the border curved.*/
-    background-color: cyan;
+    background-color:coral;
     opacity: 0.6;
     margin: 13% auto; /* */
     display: flex;
     /* justify-content: center;
     align-items: center; */
-    height: 40vh;
-    width: 40vw;
+    height: 50%;
+    width: 50%;
+    animation-name: animation;
+    animation-duration: 2s;
 
 }
+
+@keyframes animation {
+    0%   { margin-top: 0%;}
+  }
+
 
 .side{
     padding: 5% 10%;
@@ -26,9 +33,43 @@ body{
 
 
 span > input {   /*all p elements inside form elements with the given class*/
-    margin-top: 3vh;
+    margin-top: 5%;
 }
 
-@media screen and (max-width: 768px) {
-    
+#name_input {
+    border-radius: 10px;
+    padding: 5px;
+    background-color:cornflowerblue;
+}
+
+
+#prediction-probability, #prediction-gender{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#saved-answer {
+    border: 1px solid rebeccapurple;
+    border-style:dashed;
+    border-radius: 15px;
+    padding: 18px;
+    margin-top: 10%;
+}
+
+#saved-answer-gender{
+    font-family:'Times New Roman', Times, serif;
+}
+
+#clear-saved-result-button, #submit-button, #clear-all {
+    background-color: greenyellow;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+#clear-saved-result-button:hover, #submit-button:hover{
+    background-color:cadetblue;
+}
+
+#clear-all:hover{
+    background-color: crimson;
 }
