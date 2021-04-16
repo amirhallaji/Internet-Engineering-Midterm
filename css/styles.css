@@ -1,75 +1,136 @@
-body{
-    background-image: url('../images/background.jpg');  /* source image of the background*/
-    background-repeat: no-repeat;  /* no repeat for background image*/
-    background-size: cover;  /* covering the whole page*/
+body {
+    background-image: url('../images/background.jpg');
+    /* source image of the background*/
+    background-repeat: no-repeat;
+    /* no repeat for background image*/
+    background-size: cover;
+    /* covering the whole page*/
     font-family: Arial, Helvetica, sans-serif;
+    /* set font to ARIAL*/
     overflow: hidden;
+    /* It is written in order not to be scrolled. */
 }
 
-#container{
-    border: 3px solid none; /* creating a border*/
-    border-radius: 20px; /* set the edge of the border curved.*/
-    background-color:coral;
+#container {
+    border: 3px solid none;
+    /* creating a border*/
+    border-radius: 20px;
+    /* set the edge of the border curved.*/
+    background-color: coral;
+    /* background color of the border*/
     opacity: 0.6;
-    margin: 13% auto; /* */
+    /* It makes the background picture to be shown when opacity is less than 1.*/
+    margin: 13% auto;
+    /* */
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
-    height: 50%;
+    flex-flow: row wrap;
+    /* when the width of the page is reduced, the right side is placed at the bottom of the left side.*/
+    align-items: center;
+    /* aligns the flex items at the middle of the container*/
+    height: 70%;
+    /* the container contains half height of the page.*/
     width: 50%;
+    /* the container contains half width of the page.*/
     animation-name: animation;
+    /* set animation for the container*/
     animation-duration: 2s;
-
+    /* animtation delay*/
 }
 
 @keyframes animation {
-    0%   { margin-top: 0%;}
-  }
-
-
-.side{
-    padding: 5% 10%;
+    /* animation setting*/
+    0% {
+        margin-top: 0%;
+    }
+    /* at first, container is placed at the top of the page and then comes down.*/
 }
 
-
-span > input {   /*all p elements inside form elements with the given class*/
-    margin-top: 5%;
+.side {
+    padding: 5% 10%;
+    /* set padding for each side class*/
 }
 
 #name_input {
-    border-radius: 10px;
+    border-radius: 50px;
+    /* edit text is now round*/
     padding: 5px;
-    background-color:cornflowerblue;
+    /* padding :)*/
+    background-color: cornflowerblue;
 }
 
+div>input {
+    margin-top: 5px;
+    /* distance between buttons*/
+}
 
-#prediction-probability, #prediction-gender{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+input {
+    outline: none;
+    /*It removes the border around button when clicked.*/
+}
+
+#prediction-probability, #prediction-gender {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* set the font of the responses.*/
 }
 
 #saved-answer {
     border: 1px solid rebeccapurple;
-    border-style:dashed;
-    border-radius: 15px;
-    padding: 18px;
-    margin-top: 10%;
+    /* border for the saved result div*/
+    border-style: dashed;
+    /* border style*/
+    border-radius: 20px;
+    /* edge of the border*/
+    padding: 10%;
+    /* 10% distance between the content and the border*/
+    margin-top: 10px;
+    /* distance between prediction answer and border*/
 }
 
-#saved-answer-gender{
-    font-family:'Times New Roman', Times, serif;
+#saved-answer-gender {
+    /* font of the saved answers*/
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #clear-saved-result-button, #submit-button, #clear-all {
+    /*  styles for all buttons*/
     background-color: greenyellow;
-    border-radius: 10px;
+    border-radius: 50px;
     padding: 5px;
+    transition-duration: 3s;
+    /* it lasts 3 seconds to activate the hover.*/
 }
 
-
-#clear-saved-result-button:hover, #submit-button:hover{
-    background-color:cadetblue;
+#clear-saved-result-button:hover, #submit-button:hover {
+    /* hover for 2 buttons*/
+    background-color: cadetblue;
 }
 
-#clear-all:hover{
+#clear-all:hover {
+    /* hover for clear all button*/
     background-color: crimson;
 }
+
+/* .loader { */
+    /* border: 1px solid #f3f3f3; */
+    /* Light grey */
+    /* border-top: 1px solid #3498db; */
+    /* Blue */
+    /* border-radius: 50%; */
+    /* width: 12px; */
+    /* height: 12px; */
+    /* animation: spin 2s linear infinite; */
+/* } */
+
+/* @keyframes spin { */
+    /* 0% { */
+        /* transform: rotate(0deg); */
+    /* } */
+    /* 100% { */
+        /* transform: rotate(360deg); */
+    /* } */
+/* } */
+
+/* .hide-loader { */
+    /* display: none; */
+/* } */
+

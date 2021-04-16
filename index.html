@@ -2,38 +2,50 @@
 <html>
 
 <head>
-    <title>Information</title> <!-- the title of the page-->
-    <link rel="stylesheet" href="css/styles.css"> <!-- external css file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the gender</title><!-- the title of the page-->
+    <link rel="shortcut icon" type="image/jpg" href="images/icon.png">
+    <link rel="stylesheet" href="css/styles.css" /><!-- external css file -->
     <script type="text/javascript" src="js/index.js"></script>
 </head>
 
 <body>
     <div id="container">
-        <span class="side">
+        <div class="side">
             <h2>Mr. or Ms.?</h2>
-            <p><strong>Name:</strong> <input type="text" name="name" id="name_input" placeholder="Name:"></p>
-            
+            <div><strong>Name:</strong> <input type="text" name="name" id="name_input" placeholder="Name:"></div>
+
             <input type="radio" name="gender" value="male" id="male">
             <label for="male">Male</label><br>
             <input type="radio" name="gender" value="female" id="female">
             <label for="female">Female</label><br>
-            
-            <p><input type="submit" id="submit-button" value="Predict" onclick="getGender()"></p>
 
-        </span>
-        <span class="side">
-            <h2 class="lr-sides">Prediction</h2>
-            <div id="prediction" class="w3-border">
-                <p id="prediction-gender"></p>
-                <p id="prediction-probability"></p>
+            <p><input type="submit" id="submit-button" value="Predict" onclick="getGender()"></p>
+        </div>
+
+        <div class="side">
+            <h2>Prediction</h2>
+
+            <div id="prediction">
+                <div id="loader" class="loader"></div>
+                <div id="prediction-gender"></div>
+                <div id="prediction-probability"></div>
             </div>
+
             <div id="saved-answer">
                 <strong>Saved Answer</strong>
                 <p id="saved-answer-gender"></p>
-                <input type="submit" id="clear-saved-result-button" value="Clear Last" onclick="removeSavedResult()">
-                <input type="submit" value="Clear All" id="clear-all" onclick="removeAll()">
+                <div>
+                    <input type="submit" id="clear-saved-result-button" value="Clear Last" onclick="removeSavedResult()">
+                </div>
+                <div>
+                    <input type="submit" value="Clear All" id="clear-all" onclick="removeAll()">
+                </div>
             </div>
-        </span>
+
+        </div>
+
     </div>
 </body>
 

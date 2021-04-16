@@ -1,44 +1,54 @@
 let savedResult;
+
 function getGender() {
-    var res = document.getElementById("name_input").value;
-    fetch(`https://api.genderize.io/?name=${res}`)
+    let res = document.getElementById("name_input").value; // getting the value of the entered number in edit text.
+    addLoader();
+    fetch(`https://api.genderize.io/?name=${res}`) // send request to api.
         .then(res => res.json())
         .then(data => {
-            let name = data.name;
-            if (data.gender == null) {
+            deleteLoader();
+            let name = data.name; // saving the result into local variables.
+            if (data.gender == null) { // if the API cannot predict the gender(gender is null), then a window alert should be shown.
                 window.alert("Error in request. Please Try again");
-            }
-            else {
-                let gender = data.gender;
+            } else {
+                let gender = data.gender; // assigning the response gender into a local variable
 
-                let probability = data.probability;
-                document.getElementById("prediction-gender").innerHTML = "Gender: " + gender ;
-                
-                document.getElementById("prediction-probability").innerHTML = "Probability: %" + (probability * 100);
+                let probability = data.probability; // assigning the response gender into a local variable.
+                document.getElementById("prediction-gender").innerHTML = "Gender: " + gender; // writing the gender into our html.
 
-                if (localStorage.getItem(name) !== null) {
+                document.getElementById("prediction-probability").innerHTML = "Probability: %" + (probability * 100); // same as above.
+
+                if (localStorage.getItem(name) !== null) { // if the local storage has the name as a key in itself, then it is written in html code.
                     document.getElementById("saved-answer-gender").innerHTML = localStorage.getItem(data.name);
                 }
             }
-            if (document.getElementById("male").checked) {
+            if (document.getElementById("male").checked) { // saving the user answer which is enetered through radio button
                 localStorage.setItem(name, "Male");
                 savedResult = name;
-            }
-            else if (document.getElementById("female").checked) {
+            } else if (document.getElementById("female").checked) { // same as above.
                 localStorage.setItem(name, "Female");
                 savedResult = name;
             }
+
         });
 
 
 }
-function removeSavedResult() {
+
+function removeSavedResult() { // remove the last saved-item answer.
     localStorage.removeItem(savedResult);
     document.getElementById("saved-answer-gender").innerHTML = "No saved answer.";
 }
 
-function removeAll(){
+function removeAll() { // removing all the saved-answers.
     localStorage.clear();
     document.getElementById("saved-answer-gender").innerHTML = "No saved answer.";
 }
 
+function addLoader(){
+    document.getElementsByClassName("loader").disabled = false;
+}
+
+function deleteLoader(){
+    document.getElementsByClassName("loader").disabled = true;
+}
