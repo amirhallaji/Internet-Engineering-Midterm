@@ -2,11 +2,11 @@ let savedResult;
 
 function getGender() {
     let res = document.getElementById("name_input").value; // getting the value of the entered number in edit text.
-    addLoader();
+    addLoader();  // adding loader for waiting.
     fetch(`https://api.genderize.io/?name=${res}`) // send request to api.
         .then(res => res.json())
         .then(data => {
-            deleteLoader();
+            deleteLoader(); // deleting loader.
             let name = data.name; // saving the result into local variables.
             if (data.gender == null) { // if the API cannot predict the gender(gender is null), then a window alert should be shown.
                 // window.alert("Error in request. Please Try again");
@@ -50,9 +50,11 @@ function removeAll() { // removing all the saved-answers.
 }
 
 function addLoader(){
-    document.getElementsByClassName("loader").disabled = false;
+    document.getElementById("loader").style.display = "block"; // showing loader by block display
+    document.getElementById("prediction-gender").innerHTML="";
+    document.getElementById("prediction-probability").innerHTML="";
 }
 
 function deleteLoader(){
-    document.getElementsByClassName("loader").disabled = true;
+    document.getElementById("loader").style.display = "none"; // hiding loader by setting the display to none.
 }
