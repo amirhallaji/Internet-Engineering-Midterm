@@ -9,7 +9,9 @@ function getGender() {
             deleteLoader();
             let name = data.name; // saving the result into local variables.
             if (data.gender == null) { // if the API cannot predict the gender(gender is null), then a window alert should be shown.
-                window.alert("Error in request. Please Try again");
+                // window.alert("Error in request. Please Try again");
+                document.getElementById("prediction-gender").innerHTML = "No Gender Found!";
+                document.getElementById("prediction-probability").innerHTML = "";
             } else {
                 let gender = data.gender; // assigning the response gender into a local variable
 
@@ -18,10 +20,12 @@ function getGender() {
 
                 document.getElementById("prediction-probability").innerHTML = "Probability: %" + (probability * 100); // same as above.
 
-                if (localStorage.getItem(name) !== null) { // if the local storage has the name as a key in itself, then it is written in html code.
-                    document.getElementById("saved-answer-gender").innerHTML = localStorage.getItem(data.name);
-                }
             }
+            
+            if (localStorage.getItem(name) !== null) { // if the local storage has the name as a key in itself, then it is written in html code.
+                document.getElementById("saved-answer-gender").innerHTML = localStorage.getItem(data.name);
+            }
+
             if (document.getElementById("male").checked) { // saving the user answer which is enetered through radio button
                 localStorage.setItem(name, "Male");
                 savedResult = name;
